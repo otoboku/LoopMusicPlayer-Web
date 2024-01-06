@@ -106,6 +106,9 @@ file_dom.onchange = function () { return __awaiter(void 0, void 0, void 0, funct
                     arrayBuffer: decodedBufferArray,
                     id: mus_id++,
                 };
+                if (new_snd.metadata.format.numberOfSamples === undefined) {
+                    new_snd.metadata.format.numberOfSamples = Math.ceil(new_snd.metadata.format.duration * new_snd.metadata.format.sampleRate);
+                }
                 sound_list.push(new_snd);
                 tr = document.createElement("tr");
                 {
